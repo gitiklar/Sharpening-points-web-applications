@@ -98,7 +98,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 
 <div dir="rtl">
   <h1> שליחת מידע לשרת באמצעות מהטופס ללא בקשת AJAX</h1>
-  <pre>
+  <p>
 
     <form action="/action_page.php" method="post" target="_blank">
       <label for="fname">First name:</label>
@@ -107,7 +107,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       <input type="text" id="lname" name="lname"><br><br>
       <input type="submit" value="Submit">
     </form>
-  </pre>
+  </p>
   <p>
     השמות שישלחו מתאימים למה שנכתב ב-name=
     בבקשה מסוג GET יופיע המידע בשורת הכתובת ובבקשה מסוג POST הוא לא יופיע אלא רק ישלח
