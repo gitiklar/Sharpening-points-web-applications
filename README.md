@@ -59,8 +59,7 @@
 
 
 <div dir="rtl">
-  <h1> מה זה <pre><meta charset="UTF-8"></pre> </h1>
-  <h2> LocalStorage </h2>
+  <h1> מה זה < meta charset="UTF-8"> </h1>
   <p>
   מטא תג זה מציין בעצם עם איזו ערכת תווים אתר כתוב.
 UTF-8 (U מ- Universal Character Set + Transformation Format - 8-bit) הוא קידוד תווים המסוגל לקודד את כל התווים האפשריים (הנקראים נקודות קוד) ב- Unicode. הקידוד באורך משתנה ומשתמש ביחידות קוד של 8 סיביות.
