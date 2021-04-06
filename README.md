@@ -116,3 +116,22 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       "https://www.w3schools.com/action_page.php?fname=רחל&lname=כהן"
     </p>
 </div>
+
+<div dir="rtl">
+  <h1>כמה דרכים למיקום אלמנט במרכז</h1>
+    <p>
+      1.) For container element do:  display: flex , align items:center , justify-content:center
+    </p>
+    <p>
+      2.) For inner element do: margin-top: calc(50% - halfHeight) , margin-left: calc(50% - halfWidth)
+    </p>
+    <p>
+      3.) # For container element do position: relative  # For inner element do: position: absolute , top: ...px , left: ...px
+    </p>
+    <p>
+      4.) For inner element do: margin: auto
+    </p>
+    <p>
+      5.) For inner element do: display: inline-block , text-align:center
+    </p>
+</div>
