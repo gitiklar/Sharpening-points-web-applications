@@ -140,13 +140,14 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 <div dir="rtl">
   <h1>מצב בטוח</h1>
     <p>
-    <p>
+    <p dir="ltr">
     -----------------  Strict Mode  מצב בטוח ------------------ 
     </p>
     <p>
  .JavaScript מצב בטוח מבקש מהדפדפן לחפש יותר שגיאות בתוכניות
 .מצב זה לא מופעל אוטומטית כדי שקוד ישן יוכל לעבוד
 </p>
+
 1. Enabling strict mode
     -"use strict";
 
