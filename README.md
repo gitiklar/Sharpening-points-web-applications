@@ -101,9 +101,9 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
   <pre dir="ltr">
         < form action="/action_page.php" method="post" target="_blank">
           < label for="fname">First name:< /label>
-          < input type="text" id="fname" name="fname"><br><br>
+          < input type="text" id="fname" name="fname">
           < label for="lname">Last name:< /label>
-          < input type="text" id="lname" name="lname"><br><br>
+          < input type="text" id="lname" name="lname">
           < input type="submit" value="Submit">
         < /form>
   </pre>
