@@ -146,7 +146,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
     <p dir="ltr">
  .JavaScript מצב בטוח מבקש מהדפדפן לחפש יותר שגיאות בתוכניות
  </p>
- <p>
+  <p dir="ltr">
 .מצב זה לא מופעל אוטומטית כדי שקוד ישן יוכל לעבוד
 </p>
 
