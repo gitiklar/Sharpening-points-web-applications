@@ -73,7 +73,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 
 
 <div dir="rtl">
-  <h1> ?מדוע מגדירים קבצי CSS ב-head וקבצי JavaScript ב- body</h1>
+  <h1> מדוע מגדירים קבצי CSS ב-head וקבצי JavaScript ב- body?</h1>
   <p>
   
  כי כאשר יש לך הצהרת CSS לפני תחילת < body>,
@@ -94,3 +94,23 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 
 
 
+
+
+<div dir="rtl">
+  <h1> שליחת מידע לשרת באמצעות מהטופס ללא בקשת AJAX</h1>
+  <pre>
+    <form action="/action_page.php" method="post" target="_blank">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </pre>
+  <p>
+    השמות שישלחו מתאימים למה שנכתב ב-name=
+    בבקשה מסוג GET יופיע המידע בשורת הכתובת ובבקשה מסוג POST הוא לא יופיע אלא רק ישלח
+    לדוגמא:
+    "https://www.w3schools.com/action_page.php?fname=רחל&lname=כהן"
+  </p>
+</div>
