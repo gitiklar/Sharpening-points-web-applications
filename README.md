@@ -135,3 +135,22 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       5.) For inner element do: display: inline-block , text-align:center
     </p>
 </div>
+
+
+<div dir="rtl">
+  <h1>מצב בטוח</h1>
+    <p>
+    -----------------  Strict Mode  מצב בטוח ------------------ 
+ .JavaScript מצב בטוח מבקש מהדפדפן לחפש יותר שגיאות בתוכניות
+.מצב זה לא מופעל אוטומטית כדי שקוד ישן יוכל לעבוד
+
+1. Enabling strict mode
+    -"use strict";
+
+2. Assignment to global variables
+
+3. Assignemnt to reserved words
+
+4. Octal values
+    </p>
+</div>
