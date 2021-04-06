@@ -111,6 +111,8 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
     השמות שישלחו מתאימים למה שנכתב ב-name=
     בבקשה מסוג GET יופיע המידע בשורת הכתובת ובבקשה מסוג POST הוא לא יופיע אלא רק ישלח
     לדוגמא:
-    "https://www.w3schools.com/action_page.php?fname=רחל&lname=כהן"
-  </p>
+    </p>
+    <p dir = "ltr">
+      "https://www.w3schools.com/action_page.php?fname=רחל&lname=כהן"
+    </p>
 </div>
