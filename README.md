@@ -203,3 +203,14 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
     model -> Ui .המודל יכול לעדכן את התצוגה בגישה ישירה<br>
     </p>
 </div>
+
+<div dir="rtl">
+  <h1>ריאקט לעומת אנגולר</h1>
+    <p>
+              <u>React                         Angular</u><br>
+            Virtual DOM                     Real DOM<br>
+            Fast                            Slow<br>
+            Compile time debugging	        Runtime debugging<br>
+            Facebook                        Google<br>
+    </p>  
+</div>
