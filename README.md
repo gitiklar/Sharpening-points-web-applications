@@ -212,5 +212,6 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
             Fast                            Slow<br>
             Compile time debugging          Runtime debugging<br>
             Facebook                        Google<br>
+            One-way data binding            Two-way data binding<br>
     </pre>  
 </div>
