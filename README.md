@@ -210,7 +210,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
             React                           Angular<br>
             Virtual DOM                     Real DOM<br>
             Fast                            Slow<br>
-            Compile time debugging	        Runtime debugging<br>
+            Compile time debugging          Runtime debugging<br>
             Facebook                        Google<br>
     </pre>  
 </div>
