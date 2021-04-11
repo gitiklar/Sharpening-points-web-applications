@@ -217,7 +217,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 </div>
 
 <div dir="rtl">
-  <h1>ES6 לעומת ES5</h1>
+  <h1>ES6 לעומת ES5 בריאקט</h1>
     <pre dir="ltr">
             ES5                           ES6<br>
             React.createClass             class<br>
