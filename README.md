@@ -164,7 +164,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 <div dir="rtl">
   <h1>קריאה לפונקציה באמצעות Call לעומת Apply</h1>
     <p>
-        func.call(arg1 , arg2, arg3); //arg1 for 'this';
+        func.call(arg1 , arg2, arg3); //arg1 for this
     </p>
     <p>
         func.apply(array); ///The first limb for this
@@ -371,8 +371,56 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
 </div>
 
 <div dir="rtl">
-  <h1>מה זה Higher Order Component?</h1>
+  <h1>מה זה Higher Order Component - HOC?</h1>
     <p>
-    
+      אם Custom Hook היא הדרך שלנו לשתף קוד בריאקט Hook בלבד, אז HOC היא הדרך לשיתוף קוד שעובד גם בכתיב הקלאסים וגם בכתיב הקפונקציות:<br>
+      קוד של HOC מגיע תיד באותו מבנה דומה: <br>
+      1.) מגדירים פונקציה שמקבלת קוד של פקד בתור פרמטר
+      2.) הפונקציה מחזירה קוד של פקד חדש אותה היא יוצרת
+      3.) ברנדר של הפקד החדש ההוא הפונקציה מחיזירה את הפקד שהועבר כפרמטר ומעבירה אליו את כל ה-props שקיבלה כמו שהם
+      4.) הפונקציה מעבירה props חדש שאותו היא יצרה וזה בעצם הקוד שמשותף.
+      לדוגמא:<br>
     </p>
 </div>
+
+```JS
+  function withClock(Component) {
+        return function WithClock(props) {
+          const { ms } = props;
+          const [tick , setTick] = useState(0);
+
+          function updateTick() {
+            setTick(tick => tick + 1);
+          }
+
+          useEffect(()=>{
+            const timerId = setInterval(updateTick , ms);
+            return ()=>clearInterval(timerId);
+          });
+
+          return(<Component {...props} tick={tick}/>);
+        }
+    }
+
+    const NewsTicker = withClock(function NewsTicker({items , tick}) {
+        return (
+          <p>{items[tick % items.length]}</p>
+        );
+    });
+    NewsTicker.defaultProps = { ms: 1000,};
+
+    const App = () => {
+    const items = [
+      "I lit up from Reno",
+      "I was trailed by twenty hounds",
+      "Didn't get to sleep that night",
+      "Till the morning came around",
+    ];
+
+    return (
+      <div>
+          <NewsTicker items={items} ms = {2000}/>
+      </div>
+    );
+  };
+```
