@@ -424,3 +424,80 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
     );
   };
 ```
+<div dir="rtl">
+  <h1>מה זה React.children?</h1>
+    <p>
+      React.children הוא הדרך לשתף קוד ולהוציא החוצה לוגיקה עוטפת של קוד JSX<br>
+      דוגמאות: <br>
+    </p>
+</div>
+<div dir="rtl">
+    <p>
+     דוגמא פשוטה ללא הוספת לוגיקה:<br>
+    </p>
+</div>
+
+```JS
+import React from 'react';
+
+function PagesContainer(props) {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      {props.children}
+      <h1>Hi all</h1>
+    </div>
+  );
+}
+
+export function Page1(props) {
+  return (
+    <PagesContainer>
+      <p>Page 1</p>
+      <p>Page 111</p>
+    </PagesContainer>
+  );
+}
+
+export function Page2(props) {
+  return (
+    <PagesContainer>
+      <p>Page 2</p>
+      <p>Page 222</p>
+    </PagesContainer>
+  );
+}
+```
+<div dir="rtl">
+    <p>
+     דוגמא שכוללת הוספת לוגיקה לאלמנט המיכל:<br>
+    </p>
+</div>
+
+```JS
+export function FormsContainer(props) {
+    const [dataObjOfAllPages , setDataObjOfAllPages] = useState({});
+    const [currentIndex , setCurrentIndex] = useState(0);
+    const countOfPages = React.Children.count(props.children);
+  
+    function updateDataObjOfAllPages(dataObj) {
+      setDataObjOfAllPages({...dataObjOfAllPages, ...dataObj});
+    }
+    
+    function getCurrentPage() {
+      //In order to add props to child , we need do this:
+      const child = React.Children.toArray(props.children)[currentIndex];
+      return React.cloneElement(child , { dataObjOfAllPages : {...child.props.dataObjOfAllPages , ...dataObjOfAllPages} , updateDataObjOfAllPages});
+    }
+   
+    return (
+      <>
+        {getCurrentPage()}
+        <div className="btnsContainer">
+            <button disabled={currentIndex === 0} onClick={()=>setCurrentIndex(v=>v-1)}>Previous</button>
+            <button disabled={currentIndex === countOfPages-1} onClick={()=>setCurrentIndex(v=>v+1)}>Next</button>
+        </div>
+      </>
+    );
+  }
+```
