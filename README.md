@@ -358,7 +358,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       function NewsTicker({items}) {
         const index = useTimer(2000);
         return (
-          <p>{items[index % items.length]}</p>
+          < p>{items[index % items.length]}< /p>
         );
       }
       </pre>
