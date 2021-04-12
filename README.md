@@ -323,13 +323,11 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       useEffect הוא הדרך שלנו לקשר בין משתנה סטייט לבין משהו שקורה מחוץ למעגל הזה,<br>
        התבנית: <br>
       <pre dir="ltr">
-        <code>
           useEffect(()=>{
               //run code here if dependencies change
               return function abort() {
               };
           },[dependecies]);
-        </code>
       </pre>
       וזה עובד כך: כאשר יש איזשהו שינוי בסטייט , ז"א שאחד מהתלויות שנמצאות ברשימה משתנה, ריאקט מפעיל את הקוד שנמצא בתוך ה-useEffect<br>
       ואם הסטייט משתנה פעם נוספת או שהקומפוננטה עוזבת את המסך, לפני שריאקט מריץ שוב את הקוד שלמעלה , הוא יריץ את פונקציית הביטול
