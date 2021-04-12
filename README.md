@@ -501,3 +501,58 @@ export function FormsContainer(props) {
     );
   }
 ```
+<div dir="rtl">
+  <h1>מה זה memo</h1>
+    <p>
+         מטרת ה-memo צימצום הרנדרים המיותרים שביישום:<br>
+         ללא שימוש ב-memo , בכל פעם שסטייט משתנה מתבצע רנדר מחדש של כל עץ הפקדים שנמצא מתחת לקומפוננטה הזו שהשתנתה<br>
+         React.memo זה בעצם HOC שריאקט יצרה לנו שאותה אנחנו מפעילים ואליה אנחנו שולחים את הקומפוננטה שלנו שאותה אנחנו לא רוצים לרנדר תמיד.<br>
+         ה-HOC הזה סתכל על ה-props שנשלח ובודק האם משהו השתנה בו מהרנדר הקודם, אם לא, אז הוא יודע לא לרנדר מחדש את הפקד.<br>
+         ל-memo ניתן להעביר פרמטר שני שלא חובה להעביר אותו, הפרמטר השני זוהי פונקציה נוספת שאומרת לו מתי ה-props שווים , היא צריכה להחזיר ערך true או false , <br>
+          דוגמאות ל-2 המקרים<br>
+    </p>  
+</div>
+
+- 1.)
+```JS
+export default React.memo(function ColorPalette(props) {
+  console.log('Color Palette');
+  const { start } = props;
+  const [deletedBoxes, setDeletedBoxes] = useState(new Set());
+
+  function removeBox(e) {
+    const id = e.target.dataset.id;
+    deletedBoxes.add(Number(id));
+    setDeletedBoxes(new Set(deletedBoxes));
+  }
+
+  const colors = [];
+  for (let i=-360; i < 360; i++) {
+    if (deletedBoxes.has(i)) continue;
+
+    colors.push(
+      <ColorBox
+        key={i}
+        start={start}
+        spin={i}
+        onClick={removeBox}
+        id={i}
+      />
+    );
+  }
+  return colors;
+});
+```
+- 2)
+```JS
+export default React.memo(function Fiver(props) {
+  console.log('Fiver');
+  const { ticks } = props;
+
+  return (
+    <p>{Math.floor(ticks / 5)}</p>
+  );
+},(prevProps , nextProps)=>{
+  return Math.floor(prevProps.ticks / 5) === Math.floor(nextProps.ticks / 5);
+});
+```
