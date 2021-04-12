@@ -556,3 +556,39 @@ export default React.memo(function Fiver(props) {
   return Math.floor(prevProps.ticks / 5) === Math.floor(nextProps.ticks / 5);
 });
 ```
+<div dir="rtl">
+  <h1>מה זה useCallback?</h1>
+    <p>
+        הפונקציה useCallback של ריאקט נועדה להגיד לריאקט שהפונקציה שלי לא משתנה בין render-ים ואפשר להשתמש באותו אוביקט פונקציה. זה קצת דומה ל Ref אבל נועד ספציפית לפונקציות:<br>
+    </p>  
+</div>
+
+```JS
+export default React.memo(function ColorPalette({start}) {
+  console.log('Color Palette');
+  const [render , setRender] = useState(0);
+  const deletedBoxesRef = useRef(new Set());
+  const deletedBoxes = deletedBoxesRef.current;
+
+  const removeBox = useCallback(function removeBox(e) {
+    const id = e.target.dataset.id;
+    deletedBoxes.add(Number(id));
+    setRender(v=>!v);
+  },[deletedBoxes]);
+
+  const colors = [];
+  for (let i=-360; i < 360; i++) {
+    if (deletedBoxes.has(i)) continue;
+
+    colors.push(
+      <ColorBox
+        start={start}
+        spin={i}
+        onClick={removeBox}
+        id={i}
+      />
+    );
+  }
+  return colors;
+});
+```
