@@ -321,11 +321,12 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       3.) פעולות אסינכרוניות<br>
       4.) פעולה שמתבצעת רק בעת עלית הפקד<br>
       useEffect הוא הדרך שלנו לקשר בין משתנה סטייט לבין משהו שקורה מחוץ למעגל הזה,<br>
+       התבנית: <br>
       <pre dir="ltr">
         <code>
           useEffect(()=>{
               //run code here if dependencies change
-              return function abort() {<br>
+              return function abort() {
               };
           },[dependecies]);
         </code>
