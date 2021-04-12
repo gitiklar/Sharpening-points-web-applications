@@ -377,7 +377,7 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
       קוד של HOC מגיע תמיד באותו מבנה דומה: <br>
       1.) מגדירים פונקציה שמקבלת קוד של פקד בתור פרמטר<br>
       2.) הפונקציה מחזירה קוד של פקד חדש אותה היא יוצרת<br>
-      3.) ברנדר של הפקד החדש ההוא הפונקציה מחיזירה את הפקד שהועבר כפרמטר ומעבירה אליו את כל ה-props שקיבלה כמו שהם<br>
+      3.) ברנדר של הפקד החדש הפונקציה מחזירה את הפקד שהועבר כפרמטר ומעבירה אליו את כל ה-props שקיבלה כמו שהם<br>
       4.) הפונקציה מעבירה props חדש שאותו היא יצרה וזה בעצם הקוד שמשותף.<br>
       לדוגמא:<br>
     </p>
@@ -402,14 +402,14 @@ UTF-8 (Universal Transformation Format 8-bit) הוא קידוד תווים המ�
         }
     }
 
-    const NewsTicker = withClock(function NewsTicker({items , tick}) {
+  const NewsTicker = withClock(function NewsTicker({items , tick}) {
         return (
           <p>{items[tick % items.length]}</p>
         );
-    });
-    NewsTicker.defaultProps = { ms: 1000,};
+  });
+  NewsTicker.defaultProps = { ms: 1000,};
 
-    const App = () => {
+  const App = () => {
     const items = [
       "I lit up from Reno",
       "I was trailed by twenty hounds",
