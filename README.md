@@ -639,7 +639,9 @@ export default React.memo(function ColorPalette({start}) {
     2.) כל פעם שה Store משתנה מכל סיבה שהיא, כל הקומפוננטות במסך ירונדרו מחדש.<br>
     3.) זה לא כל כך נורא כי כל המידע הוא Immutable. לכן באופן אוטומטי נוכל לדלג על Render של קומפוננטות אם המידע שהן תלויות בו לא משתנה.<br>
     4.) בגלל שיש רק Store אחד, ה Store הוא גם ה Dispatcher. הוא מקבל את כל ה Actions ומעדכן את עצמו בהתאם.<br>
-  </p>  
+  </p>
+  <h2>ה-flow: </h2>
+  <h2>Component => Action => Dispatcher => middleware=>middleware... => Store => Reducers => State</h2>
 </div>
 
 <div dir="rtl">
